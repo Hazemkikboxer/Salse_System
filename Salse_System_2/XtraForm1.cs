@@ -130,7 +130,7 @@ namespace Salse_System_2
         }
 
         private void btnLast_Click(object sender, EventArgs e)
-        {
+        {//adsdffd
             tbl.Clear();
             tbl = db.ReedData(" SELECT COUNT (Cust_ID) FROM Customers_Table ", "");
             row = (int)tbl.Rows[0][0] - 1;
