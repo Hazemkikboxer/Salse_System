@@ -100,8 +100,8 @@ namespace Salse_System_2
         }
 
         private void btnFrist_Click(object sender, EventArgs e)
-        { 
-            
+        {
+            row = 0;
             Show();
         }
 
@@ -130,7 +130,7 @@ namespace Salse_System_2
         }
 
         private void btnLast_Click(object sender, EventArgs e)
-        {//adsdffd
+        {
             tbl.Clear();
             tbl = db.ReedData(" SELECT COUNT (Cust_ID) FROM Customers_Table ", "");
             row = (int)tbl.Rows[0][0] - 1;
@@ -139,10 +139,17 @@ namespace Salse_System_2
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            tbl.Clear();
-            tbl = db.ReedData(" SELECT COUNT (Cust_ID) FROM Customers_Table ", "");
-            row = (int)tbl.Rows[0][0]-1;
+            
+            row -=1;
             Show();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+
+            row += 1;
+            Show();
+
         }
     }
 }
