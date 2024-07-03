@@ -48,7 +48,7 @@ namespace Salse_System_2
             TBL = DB.ReedData("SELECT * FROM Suppliers_Table","");
             if (TBL.Rows.Count.ToString() == "")
             {
-                MessageBox.Show("هذا الجدول لا يوجد به بيانات ","أنتبه",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+                MessageBox.Show(" لا يوجد بيانات في هذه الشاشه ","أنتبه",MessageBoxButtons.OK,MessageBoxIcon.Stop);
             }
             else
             {
@@ -58,11 +58,31 @@ namespace Salse_System_2
                 txtName.Text = TBL.Rows[row][3].ToString();
                 txtNotes.Text = TBL.Rows[row][4].ToString();
             }
+            btnAdd.Enabled = false;
+            btnNew.Enabled = true;
+            btnSave.Enabled = true;
+            btnDelete.Enabled = true;
+            btnDeleteAll.Enabled = true;
+            btnSearch.Enabled = true;
+
         }
 
         private void frm_Suppliers_Load(object sender, EventArgs e)
         {
             AutoNumper();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (txtName.Text == "")
+            {
+                MessageBox.Show("يجب عليك ادخال اسم المورد ","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+            else
+            {
+                DB.ExecuteData($"INSERT INTO Suppliers_Table values ( {txtID.Text},N'{txtName.Text}' , N'{txtAdress.Text}' ,N'{txtPhone.Text}' , N'{txtNotes.Text}' )", "تم ادخال البيانات بنجاح ");
+                AutoNumper();
+            }
         }
     }
 }
