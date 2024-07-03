@@ -45,5 +45,12 @@ namespace Salse_System_2
         
                  
         }
+
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frm_Suppliers frm = new frm_Suppliers();
+            frm.ShowDialog();
+        }
+
     }
 }

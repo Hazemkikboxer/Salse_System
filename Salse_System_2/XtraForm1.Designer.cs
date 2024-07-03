@@ -64,7 +64,7 @@
             this.lable1.AutoSize = true;
             this.lable1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lable1.ForeColor = System.Drawing.Color.Crimson;
-            this.lable1.Location = new System.Drawing.Point(670, 28);
+            this.lable1.Location = new System.Drawing.Point(655, 24);
             this.lable1.Name = "lable1";
             this.lable1.Size = new System.Drawing.Size(97, 18);
             this.lable1.TabIndex = 0;
@@ -72,7 +72,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(473, 25);
+            this.txtID.Location = new System.Drawing.Point(458, 21);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(191, 26);
@@ -93,10 +93,10 @@
             this.groupBox1.Controls.Add(this.lable1);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox1.Location = new System.Drawing.Point(30, 2);
+            this.groupBox1.Location = new System.Drawing.Point(16, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox1.Size = new System.Drawing.Size(797, 187);
+            this.groupBox1.Size = new System.Drawing.Size(778, 187);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " بيانات العملاء";
@@ -104,7 +104,7 @@
             // 
             // txtNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(40, 109);
+            this.txtNotes.Location = new System.Drawing.Point(25, 105);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(191, 68);
@@ -115,7 +115,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Crimson;
-            this.label5.Location = new System.Drawing.Point(237, 112);
+            this.label5.Location = new System.Drawing.Point(222, 108);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 18);
             this.label5.TabIndex = 11;
@@ -123,7 +123,7 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(473, 123);
+            this.txtPhone.Location = new System.Drawing.Point(458, 119);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(191, 26);
             this.txtPhone.TabIndex = 10;
@@ -133,7 +133,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Crimson;
-            this.label4.Location = new System.Drawing.Point(670, 126);
+            this.label4.Location = new System.Drawing.Point(655, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 18);
             this.label4.TabIndex = 9;
@@ -141,7 +141,7 @@
             // 
             // txtAdress
             // 
-            this.txtAdress.Location = new System.Drawing.Point(40, 25);
+            this.txtAdress.Location = new System.Drawing.Point(25, 21);
             this.txtAdress.Multiline = true;
             this.txtAdress.Name = "txtAdress";
             this.txtAdress.Size = new System.Drawing.Size(191, 68);
@@ -152,7 +152,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Crimson;
-            this.label2.Location = new System.Drawing.Point(237, 28);
+            this.label2.Location = new System.Drawing.Point(222, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 18);
             this.label2.TabIndex = 5;
@@ -160,7 +160,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(473, 75);
+            this.txtName.Location = new System.Drawing.Point(458, 71);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(191, 26);
             this.txtName.TabIndex = 4;
@@ -170,7 +170,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Crimson;
-            this.label1.Location = new System.Drawing.Point(670, 78);
+            this.label1.Location = new System.Drawing.Point(655, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 18);
             this.label1.TabIndex = 3;
@@ -186,7 +186,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.Blue;
             this.groupBox2.Location = new System.Drawing.Point(178, 218);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(420, 100);
+            this.groupBox2.Size = new System.Drawing.Size(401, 100);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "اسهم التنقل";
@@ -195,7 +195,7 @@
             // 
             this.btnFrist.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnFrist.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnFrist.ImageOptions.SvgImage")));
-            this.btnFrist.Location = new System.Drawing.Point(47, 38);
+            this.btnFrist.Location = new System.Drawing.Point(37, 38);
             this.btnFrist.Name = "btnFrist";
             this.btnFrist.Size = new System.Drawing.Size(64, 30);
             this.btnFrist.TabIndex = 3;
@@ -205,7 +205,7 @@
             // 
             this.btnPrev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnPrev.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPrev.ImageOptions.SvgImage")));
-            this.btnPrev.Location = new System.Drawing.Point(136, 38);
+            this.btnPrev.Location = new System.Drawing.Point(126, 38);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(64, 30);
             this.btnPrev.TabIndex = 2;
@@ -215,7 +215,7 @@
             // 
             this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnNext.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnNext.ImageOptions.SvgImage")));
-            this.btnNext.Location = new System.Drawing.Point(225, 38);
+            this.btnNext.Location = new System.Drawing.Point(215, 38);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(64, 30);
             this.btnNext.TabIndex = 1;
@@ -225,7 +225,7 @@
             // 
             this.btnLast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnLast.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLast.ImageOptions.SvgImage")));
-            this.btnLast.Location = new System.Drawing.Point(314, 38);
+            this.btnLast.Location = new System.Drawing.Point(304, 38);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(64, 30);
             this.btnLast.TabIndex = 0;
@@ -246,7 +246,7 @@
             this.groupBox3.Location = new System.Drawing.Point(16, 336);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox3.Size = new System.Drawing.Size(797, 156);
+            this.groupBox3.Size = new System.Drawing.Size(778, 156);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "العمليات المتاحه";
@@ -256,7 +256,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Crimson;
-            this.label3.Location = new System.Drawing.Point(387, 28);
+            this.label3.Location = new System.Drawing.Point(403, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(213, 18);
             this.label3.TabIndex = 7;
@@ -266,30 +266,31 @@
             // 
             this.txtSearch.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtSearch.Location = new System.Drawing.Point(138, 25);
+            this.txtSearch.Location = new System.Drawing.Point(154, 25);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(230, 23);
             this.txtSearch.TabIndex = 6;
             this.txtSearch.Text = "ابحث بأسم العميل او جزء منه";
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnSearch
             // 
             this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Appearance.Options.UseFont = true;
             this.btnSearch.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSearch.ImageOptions.SvgImage")));
-            this.btnSearch.Location = new System.Drawing.Point(26, 14);
+            this.btnSearch.Location = new System.Drawing.Point(42, 14);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(91, 45);
             this.btnSearch.TabIndex = 5;
             this.btnSearch.Text = "بحث";
-            this.btnSearch.Click += new System.EventHandler(this.simpleButton10_Click);
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnSave
             // 
             this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
-            this.btnSave.Location = new System.Drawing.Point(430, 75);
+            this.btnSave.Location = new System.Drawing.Point(362, 78);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(91, 45);
             this.btnSave.TabIndex = 4;
@@ -301,7 +302,7 @@
             this.btnDeleteAll.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteAll.Appearance.Options.UseFont = true;
             this.btnDeleteAll.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDeleteAll.ImageOptions.SvgImage")));
-            this.btnDeleteAll.Location = new System.Drawing.Point(155, 75);
+            this.btnDeleteAll.Location = new System.Drawing.Point(87, 78);
             this.btnDeleteAll.Name = "btnDeleteAll";
             this.btnDeleteAll.Size = new System.Drawing.Size(109, 45);
             this.btnDeleteAll.TabIndex = 3;
@@ -313,7 +314,7 @@
             this.btnDelete.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Appearance.Options.UseFont = true;
             this.btnDelete.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDelete.ImageOptions.SvgImage")));
-            this.btnDelete.Location = new System.Drawing.Point(298, 75);
+            this.btnDelete.Location = new System.Drawing.Point(230, 78);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(91, 45);
             this.btnDelete.TabIndex = 2;
@@ -325,7 +326,7 @@
             this.btnNew.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.Appearance.Options.UseFont = true;
             this.btnNew.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnNew.ImageOptions.SvgImage")));
-            this.btnNew.Location = new System.Drawing.Point(555, 75);
+            this.btnNew.Location = new System.Drawing.Point(487, 78);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(91, 45);
             this.btnNew.TabIndex = 1;
@@ -337,7 +338,7 @@
             this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Appearance.Options.UseFont = true;
             this.btnAdd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAdd.ImageOptions.SvgImage")));
-            this.btnAdd.Location = new System.Drawing.Point(684, 75);
+            this.btnAdd.Location = new System.Drawing.Point(616, 78);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(91, 45);
             this.btnAdd.TabIndex = 0;
@@ -351,7 +352,7 @@
             this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 497);
+            this.ClientSize = new System.Drawing.Size(797, 490);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

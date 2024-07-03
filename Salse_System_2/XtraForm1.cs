@@ -73,9 +73,30 @@ namespace Salse_System_2
 
         }
 
-        private void simpleButton10_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
+            DataTable tblSearch = new DataTable ();
+            tblSearch.Clear();
+            tblSearch = db.ReedData($"SELECT * FROM Customers_Table where Cust_Name LIKE N'%{txtSearch.Text}%'", "");
+            if (txtSearch.Text == "")
+            {
+                MessageBox.Show("قم بأدخال الاسم للبحث عنه", "تحذير", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+            else
+            {
+                txtID.Text = tblSearch.Rows[0][0].ToString();
+                txtName.Text = tblSearch.Rows[0][1].ToString();
+                txtAdress.Text = tblSearch.Rows[0][2].ToString();
+                txtPhone.Text = tblSearch.Rows[0][3].ToString();
+                txtNotes.Text = tblSearch.Rows[0][4].ToString();
 
+            }
+            btnAdd.Enabled = false;
+            btnNew.Enabled = true; 
+            btnDelete.Enabled = true;
+            btnDeleteAll.Enabled = true;
+            btnSave.Enabled = true;
         }
 
         private void txtID_TextChanged(object sender, EventArgs e)
@@ -90,8 +111,17 @@ namespace Salse_System_2
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            db.ExecuteData($"insert into Customers_Table Values ('{txtID.Text}',N'{txtName.Text}',N'{txtAdress.Text}',N'{txtPhone.Text}',N'{txtNotes.Text}')", "تم ادخال البيانات بنجاح");
-            AutoNumper();
+            if (txtName.Text == "")
+            {
+                MessageBox.Show("يجب ادخال اسم العميل","تحذير", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                db.ExecuteData($"insert into Customers_Table Values ('{txtID.Text}',N'{txtName.Text}',N'{txtAdress.Text}',N'{txtPhone.Text}',N'{txtNotes.Text}')", "تم ادخال البيانات بنجاح");
+                AutoNumper();
+            }
+            
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -139,16 +169,39 @@ namespace Salse_System_2
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            
-            row -=1;
-            Show();
+            if (row == 0)
+            {
+                MessageBox.Show("هذا هو اول صف في هذا الجدول", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (row > 0) 
+            {
+                row -= 1;
+                Show();
+            }
+         
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            tbl.Clear();
+            tbl = db.ReedData(" SELECT COUNT (Cust_ID) FROM Customers_Table ", "");
+            if ((int)tbl.Rows[0][0] - 1 == row)
+            {
+                MessageBox.Show("هذا هو اخر صف في هذا الجدول","تأكيد",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                row += 1;
+                Show();
+            }
+            
 
-            row += 1;
-            Show();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
