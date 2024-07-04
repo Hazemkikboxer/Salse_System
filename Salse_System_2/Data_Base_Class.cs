@@ -16,7 +16,7 @@ namespace Salse_System_2
         SqlConnection conn = new SqlConnection(@"Server=PCDEV\MSSQLSERVER01;Database=Salse System_DB;User Id=hazem;Password=hazem;");
         SqlCommand cmd = new SqlCommand();
 
-        //This is the the reading function 
+        //This is the the reading function it bring data for me from the DataBase 
         public DataTable ReedData(string CommandText , string Message)
         {
             DataTable TBL = new DataTable();

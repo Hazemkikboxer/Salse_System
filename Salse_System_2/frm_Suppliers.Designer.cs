@@ -109,6 +109,7 @@
             this.btnSearch.Size = new System.Drawing.Size(91, 45);
             this.btnSearch.TabIndex = 5;
             this.btnSearch.Text = "بحث";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnSave
             // 
@@ -153,6 +154,7 @@
             this.btnNew.Size = new System.Drawing.Size(91, 45);
             this.btnNew.TabIndex = 1;
             this.btnNew.Text = "جديد ";
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnAdd
             // 
@@ -189,6 +191,7 @@
             this.btnFrist.Name = "btnFrist";
             this.btnFrist.Size = new System.Drawing.Size(64, 33);
             this.btnFrist.TabIndex = 3;
+            this.btnFrist.Click += new System.EventHandler(this.btnFrist_Click);
             // 
             // btnPrev
             // 
@@ -198,6 +201,7 @@
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(64, 33);
             this.btnPrev.TabIndex = 2;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // btnNext
             // 
@@ -207,6 +211,7 @@
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(64, 33);
             this.btnNext.TabIndex = 1;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnLast
             // 
@@ -216,6 +221,7 @@
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(64, 33);
             this.btnLast.TabIndex = 0;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // groupBox1
             // 

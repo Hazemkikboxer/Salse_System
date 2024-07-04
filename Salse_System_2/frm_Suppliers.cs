@@ -46,7 +46,7 @@ namespace Salse_System_2
         {
             TBL.Clear();
             TBL = DB.ReedData("SELECT * FROM Suppliers_Table","");
-            if (TBL.Rows.Count.ToString() == "")
+            if (TBL.Rows.Count <= 0)
             {
                 MessageBox.Show(" لا يوجد بيانات في هذه الشاشه ","أنتبه",MessageBoxButtons.OK,MessageBoxIcon.Stop);
             }
@@ -55,7 +55,7 @@ namespace Salse_System_2
                 txtID.Text = TBL.Rows[row][0].ToString();
                 txtName.Text = TBL.Rows[row][1].ToString();
                 txtAdress.Text = TBL.Rows[row][2].ToString();
-                txtName.Text = TBL.Rows[row][3].ToString();
+                txtPhone.Text = TBL.Rows[row][3].ToString();
                 txtNotes.Text = TBL.Rows[row][4].ToString();
             }
             btnAdd.Enabled = false;
@@ -80,9 +80,52 @@ namespace Salse_System_2
             }
             else
             {
-                DB.ExecuteData($"INSERT INTO Suppliers_Table values ( {txtID.Text},N'{txtName.Text}' , N'{txtAdress.Text}' ,N'{txtPhone.Text}' , N'{txtNotes.Text}' )", "تم ادخال البيانات بنجاح ");
+                DB.ExecuteData($"INSERT INTO Suppliers_Table values ( {txtID.Text},N'{txtName.Text}' , N'{txtAdress.Text}' ,N'{txtPhone.Text}' , N'{txtNotes.Text}' )", "تم اضافة البيانات بنجاح ");
                 AutoNumper();
             }
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            AutoNumper();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnFrist_Click(object sender, EventArgs e)
+        {
+            row = 0; 
+            show();
+        }
+
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            TBL.Clear();
+            TBL = DB.ReedData("SELECT COUNT (Sup_ID) FROM Suppliers_Table ", "");
+            row = (int)(TBL.Rows[0][0]) - 1;
+            show();
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            row -=1;
+            if (row < 0)
+            {
+                MessageBox.Show("this is the frist supplier in suppliers table ","انتبه",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                show();
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+        
         }
     }
 }
