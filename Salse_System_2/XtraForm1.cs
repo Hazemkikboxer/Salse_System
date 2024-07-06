@@ -75,9 +75,9 @@ namespace Salse_System_2
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            DataTable tblSearch = new DataTable ();
-            tblSearch.Clear();
-            tblSearch = db.ReedData($"SELECT * FROM Customers_Table where Cust_Name LIKE N'%{txtSearch.Text}%'", "");
+           // DataTable tblSearch = new DataTable ();
+            tbl.Clear();
+            tbl = db.ReedData($"SELECT * FROM Customers_Table where Cust_Name LIKE N'%{txtSearch.Text}%'", "");
             if (txtSearch.Text == "")
             {
                 MessageBox.Show("قم بأدخال الاسم للبحث عنه", "تحذير", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -85,11 +85,11 @@ namespace Salse_System_2
             }
             else
             {
-                txtID.Text = tblSearch.Rows[0][0].ToString();
-                txtName.Text = tblSearch.Rows[0][1].ToString();
-                txtAdress.Text = tblSearch.Rows[0][2].ToString();
-                txtPhone.Text = tblSearch.Rows[0][3].ToString();
-                txtNotes.Text = tblSearch.Rows[0][4].ToString();
+                txtID.Text = tbl.Rows[0][0].ToString();
+                txtName.Text = tbl.Rows[0][1].ToString();
+                txtAdress.Text = tbl.Rows[0][2].ToString();
+                txtPhone.Text = tbl.Rows[0][3].ToString();
+                txtNotes.Text = tbl.Rows[0][4].ToString();
 
             }
             btnAdd.Enabled = false;

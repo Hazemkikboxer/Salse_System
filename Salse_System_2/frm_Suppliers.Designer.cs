@@ -121,6 +121,7 @@
             this.btnSave.Size = new System.Drawing.Size(91, 45);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "حفظ";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDeleteAll
             // 
@@ -132,6 +133,7 @@
             this.btnDeleteAll.Size = new System.Drawing.Size(109, 45);
             this.btnDeleteAll.TabIndex = 3;
             this.btnDeleteAll.Text = "حذف الكل";
+            this.btnDeleteAll.Click += new System.EventHandler(this.btnDeleteAll_Click);
             // 
             // btnDelete
             // 
@@ -143,6 +145,7 @@
             this.btnDelete.Size = new System.Drawing.Size(91, 45);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "حذف";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnNew
             // 

@@ -92,7 +92,29 @@ namespace Salse_System_2
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-           
+            TBL.Clear();
+            TBL = DB.ReedData($"SELECT * FROM Suppliers_Table where Sup_Name like N'%{txtSearch.Text}%'", "");
+            try
+            {
+                txtID.Text = TBL.Rows[0][0].ToString();
+                txtName.Text = TBL.Rows[0][1].ToString();
+                txtAdress.Text = TBL.Rows[0][2].ToString();
+                txtPhone.Text = TBL.Rows[0][3].ToString();
+                txtNotes.Text = TBL.Rows[0][4].ToString();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+             
+            btnAdd.Enabled = false;
+            btnNew.Enabled = true;
+            btnSave.Enabled = true;
+            btnDelete.Enabled = true;
+            btnDeleteAll.Enabled = true;
+            btnSearch.Enabled = true;
+
+
         }
 
         private void btnFrist_Click(object sender, EventArgs e)
@@ -125,7 +147,51 @@ namespace Salse_System_2
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            TBL.Clear();
+            TBL = DB.ReedData("SELECT COUNT (Sup_ID) FROM Suppliers_Table ", "");
+            row += 1;
+            if (row == (int)TBL.Rows[0][0])
+            {
+                MessageBox.Show("this is the last supplier in the suppliers table","watch out",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+                return;
+            }
+            else
+            {
+                show();
+            }
         
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            TBL.Clear();
+            TBL = DB.ReedData ($"update Suppliers_Table set Sup_Name = '{txtName.Text}' ,Sup_Adress = '{txtAdress.Text}', Sup_Phone = '{txtPhone.Text}',Notes = '{txtNotes.Text}' where Sup_ID ={txtID.Text}", "تم التعديل بنجاح ");
+            AutoNumper();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if ((MessageBox.Show("هل تريد بتأكيد مسح بيانات هذا المورد","انتبه",MessageBoxButtons.YesNo,MessageBoxIcon.Warning).ToString())=="Yes")
+            {
+                DB.ExecuteData($"DELETE FROM Suppliers_Table where Sup_ID ={txtID.Text} ", "تم مسح البيانات بنجاح ");
+            }
+            else
+            {
+                AutoNumper();
+            }
+        }
+
+        private void btnDeleteAll_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("هل تريد بتأكيد مسح بيانات جميع الموردين بالفعل", "انتبه",MessageBoxButtons.YesNo,MessageBoxIcon.Warning).ToString()=="Yes" )
+            {
+                DB.ExecuteData("DELETE FROM Suppliers_Table", "تم مسح جميع البيانات بنجاح");
+            }
+            else
+            {
+                AutoNumper();
+            }
+
         }
     }
 }
