@@ -193,5 +193,10 @@ namespace Salse_System_2
             }
 
         }
+
+        private void frm_Suppliers_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frm_Buy.GetForm.FillSuppliers();
+        }
     }
 }

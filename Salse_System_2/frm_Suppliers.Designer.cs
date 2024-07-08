@@ -345,12 +345,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 501);
+            this.ClientSize = new System.Drawing.Size(792, 487);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frm_Suppliers";
             this.Text = "frm_Suppliers";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Suppliers_FormClosing);
             this.Load += new System.EventHandler(this.frm_Suppliers_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

@@ -52,5 +52,10 @@ namespace Salse_System_2
             frm.ShowDialog();
         }
 
+        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frm_Buy frm = new frm_Buy();
+            frm.ShowDialog();
+        }
     }
 }
