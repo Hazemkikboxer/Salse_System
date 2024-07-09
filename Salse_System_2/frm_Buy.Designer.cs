@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Buy));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtParCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lable1 = new System.Windows.Forms.Label();
@@ -45,12 +46,6 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.dgvBuy = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txtID = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -63,6 +58,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtpDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuy)).BeginInit();
@@ -131,11 +132,13 @@
             // 
             // cbxProduct
             // 
+            this.cbxProduct.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cbxProduct.FormattingEnabled = true;
             this.cbxProduct.Location = new System.Drawing.Point(295, 70);
             this.cbxProduct.Name = "cbxProduct";
             this.cbxProduct.Size = new System.Drawing.Size(132, 21);
             this.cbxProduct.TabIndex = 12;
+            this.cbxProduct.SelectedIndexChanged += new System.EventHandler(this.cbxProduct_SelectedIndexChanged);
             // 
             // btnItemDown
             // 
@@ -144,9 +147,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnItemDown.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnItemDown.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnItemDown.ImageOptions.SvgImage")));
-            this.btnItemDown.Location = new System.Drawing.Point(261, 62);
+            this.btnItemDown.Location = new System.Drawing.Point(261, 67);
             this.btnItemDown.Name = "btnItemDown";
-            this.btnItemDown.Size = new System.Drawing.Size(28, 29);
+            this.btnItemDown.Size = new System.Drawing.Size(28, 28);
             this.btnItemDown.TabIndex = 13;
             this.btnItemDown.Click += new System.EventHandler(this.btnItemDown_Click);
             // 
@@ -157,9 +160,9 @@
             this.F2.Appearance.Options.UseFont = true;
             this.F2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.F2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.F2.Location = new System.Drawing.Point(231, 62);
+            this.F2.Location = new System.Drawing.Point(231, 73);
             this.F2.Name = "F2";
-            this.F2.Size = new System.Drawing.Size(24, 29);
+            this.F2.Size = new System.Drawing.Size(24, 22);
             this.F2.TabIndex = 14;
             this.F2.Text = "F2";
             // 
@@ -170,9 +173,9 @@
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl2.Location = new System.Drawing.Point(147, 62);
+            this.labelControl2.Location = new System.Drawing.Point(147, 73);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(44, 29);
+            this.labelControl2.Size = new System.Drawing.Size(44, 22);
             this.labelControl2.TabIndex = 18;
             this.labelControl2.Text = "Delete";
             this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
@@ -185,9 +188,9 @@
             this.btnSupplerProwser.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.btnSupplerProwser.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnSupplerProwser.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnSupplerProwser.Location = new System.Drawing.Point(267, 4);
+            this.btnSupplerProwser.Location = new System.Drawing.Point(261, 5);
             this.btnSupplerProwser.Name = "btnSupplerProwser";
-            this.btnSupplerProwser.Size = new System.Drawing.Size(28, 22);
+            this.btnSupplerProwser.Size = new System.Drawing.Size(28, 20);
             this.btnSupplerProwser.TabIndex = 19;
             this.btnSupplerProwser.Text = "...";
             this.btnSupplerProwser.Click += new System.EventHandler(this.labelControl1_Click);
@@ -214,9 +217,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnItemDelete.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnItemDelete.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnItemDelete.ImageOptions.SvgImage")));
-            this.btnItemDelete.Location = new System.Drawing.Point(194, 62);
+            this.btnItemDelete.Location = new System.Drawing.Point(194, 67);
             this.btnItemDelete.Name = "btnItemDelete";
-            this.btnItemDelete.Size = new System.Drawing.Size(33, 30);
+            this.btnItemDelete.Size = new System.Drawing.Size(33, 29);
             this.btnItemDelete.TabIndex = 17;
             // 
             // labelControl3
@@ -228,7 +231,7 @@
             this.labelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.labelControl3.Location = new System.Drawing.Point(545, 69);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(21, 20);
+            this.labelControl3.Size = new System.Drawing.Size(21, 13);
             this.labelControl3.TabIndex = 23;
             this.labelControl3.Text = "F3";
             // 
@@ -245,6 +248,7 @@
             // 
             // dgvBuy
             // 
+            this.dgvBuy.AllowUserToAddRows = false;
             this.dgvBuy.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvBuy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBuy.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -254,46 +258,19 @@
             this.Column4,
             this.Column5,
             this.Column6});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBuy.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBuy.Location = new System.Drawing.Point(3, 108);
             this.dgvBuy.Name = "dgvBuy";
             this.dgvBuy.Size = new System.Drawing.Size(851, 305);
             this.dgvBuy.TabIndex = 27;
             this.dgvBuy.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "رقم المنتج";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "اسم المنتج";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "الكميه";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 150;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "الخصم";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 150;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "الضريبه";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 110;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "الاجمالي";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 150;
             // 
             // labelControl5
             // 
@@ -334,7 +311,7 @@
             this.lblUserName.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.lblUserName.Location = new System.Drawing.Point(735, 433);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(28, 24);
+            this.lblUserName.Size = new System.Drawing.Size(28, 17);
             this.lblUserName.TabIndex = 31;
             this.lblUserName.Text = "...";
             // 
@@ -348,7 +325,7 @@
             this.labelControl7.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.labelControl7.Location = new System.Drawing.Point(735, 469);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(28, 24);
+            this.labelControl7.Size = new System.Drawing.Size(28, 17);
             this.labelControl7.TabIndex = 33;
             this.labelControl7.Text = "...";
             // 
@@ -432,11 +409,46 @@
             this.label5.TabIndex = 39;
             this.label5.Text = " اجمالي المطلوب:";
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "رقم المنتج";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "اسم المنتج";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 150;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "الكميه";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 150;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "السعر";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 150;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "الخصم";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 110;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "الاجمالي";
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 150;
+            // 
             // frm_Buy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 541);
+            this.ClientSize = new System.Drawing.Size(862, 534);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label4);
@@ -498,12 +510,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private System.Windows.Forms.DataGridView dgvBuy;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox textBox1;
         private DevExpress.XtraEditors.LabelControl lblUserName;
@@ -516,5 +522,11 @@
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.ComboBox cbxSuppliers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

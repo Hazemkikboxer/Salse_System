@@ -32,9 +32,7 @@ namespace Salse_System_2
                 return frm;
              }
         }
-
-
-         
+      
         public frm_Buy()
         {
             InitializeComponent();
@@ -63,6 +61,7 @@ namespace Salse_System_2
             dtpAagel.Text = DateTime.Now.ToShortDateString();
             cbxProduct.SelectedIndex = -0;
             cbxSuppliers.SelectedIndex = 0;
+            cbxProduct.Text = "اختر منتج";
             rbtnCash.Checked = true;
             txtTotal.Clear();
             txtParCode.Clear();
@@ -117,6 +116,54 @@ namespace Salse_System_2
         }
 
         private void btnItemDown_Click(object sender, EventArgs e)
+        {
+            if (cbxProduct.Text == "اختر منتج")
+            {
+                MessageBox.Show("يجب اختيار منتج","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return;
+            }
+            if (cbxProduct.Items.Count <= 0)
+            {
+                MessageBox.Show("من فضلك قم بأدخال المنتجات في جدول المنتجات","انتبه",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+                return;
+            }
+
+            DataTable TBL_Product = new DataTable();
+            TBL_Product = db.ReedData($"SELECT * FROM Products_Table WHERE Pro_ID = {cbxProduct.SelectedValue} ", "");
+
+            if (TBL_Product.Rows.Count >= 1)
+            {
+
+                try
+                {
+                    string  Product_ID = TBL_Product.Rows[0][0].ToString();
+                    string  Product_Name = TBL_Product.Rows[0][1].ToString();
+                    string  Product_Qty = TBL_Product.Rows[0][2].ToString();
+                    string  Product_Buy_Price = TBL_Product.Rows[0][3].ToString();
+                    decimal Discount = 0;
+                    decimal Total = 1 * Convert.ToDecimal(TBL_Product.Rows[0][3]);
+
+                    dgvBuy.Rows.Add(1);
+                    int RowIndex = dgvBuy.Rows.Count - 1;
+                    dgvBuy.Rows[RowIndex].Cells[0].Value = Product_ID;
+                    dgvBuy.Rows[RowIndex].Cells[1].Value = Product_Name;
+                    dgvBuy.Rows[RowIndex].Cells[2].Value = Product_Qty;
+                    dgvBuy.Rows[RowIndex].Cells[3].Value = Product_Buy_Price;
+                    dgvBuy.Rows[RowIndex].Cells[4].Value = Discount;
+                    dgvBuy.Rows[RowIndex].Cells[5].Value = Total;
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+                
+            }
+
+
+        }
+
+        private void cbxProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

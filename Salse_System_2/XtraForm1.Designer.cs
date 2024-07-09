@@ -146,6 +146,7 @@
             this.txtAdress.Name = "txtAdress";
             this.txtAdress.Size = new System.Drawing.Size(191, 68);
             this.txtAdress.TabIndex = 6;
+            this.txtAdress.TextChanged += new System.EventHandler(this.txtAdress_TextChanged);
             // 
             // label2
             // 
@@ -225,7 +226,7 @@
             // 
             this.btnLast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnLast.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLast.ImageOptions.SvgImage")));
-            this.btnLast.Location = new System.Drawing.Point(304, 38);
+            this.btnLast.Location = new System.Drawing.Point(296, 38);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(64, 30);
             this.btnLast.TabIndex = 0;
@@ -352,7 +353,7 @@
             this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 483);
+            this.ClientSize = new System.Drawing.Size(798, 476);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
