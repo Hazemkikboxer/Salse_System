@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraBars.ViewInfo;
 using DevExpress.XtraEditors;
+using DevExpress.XtraSpreadsheet.Import.OpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -154,6 +155,19 @@ namespace Salse_System_2
 
                 }
                 catch (Exception ex)
+                {
+
+                }
+                try
+                {
+                    decimal TotalOrder = 0;
+                    for (int i = 0;i <= dgvBuy.Rows.Count -1; i++)
+                    {
+                        TotalOrder +=Convert.ToDecimal(dgvBuy.Rows[i].Cells[5].Value);
+                    }
+                    txtTotal.Text =Math.Round( TotalOrder ).ToString();
+                }
+                catch(Exception ex)
                 {
 
                 }
