@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Buy));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.txtParCode = new System.Windows.Forms.TextBox();
+            this.txtBarCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lable1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,11 +45,17 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.dgvBuy = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txtID = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblUserName = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.lblProductCount = new DevExpress.XtraEditors.LabelControl();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.rbtnCash = new System.Windows.Forms.RadioButton();
             this.rbtnAagel = new System.Windows.Forms.RadioButton();
@@ -58,12 +63,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtpDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuy)).BeginInit();
@@ -71,12 +70,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtpAagel.Properties.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtParCode
+            // txtBarCode
             // 
-            this.txtParCode.Location = new System.Drawing.Point(569, 68);
-            this.txtParCode.Name = "txtParCode";
-            this.txtParCode.Size = new System.Drawing.Size(191, 21);
-            this.txtParCode.TabIndex = 8;
+            this.txtBarCode.Location = new System.Drawing.Point(569, 67);
+            this.txtBarCode.Name = "txtBarCode";
+            this.txtBarCode.Size = new System.Drawing.Size(191, 21);
+            this.txtBarCode.TabIndex = 8;
+            this.txtBarCode.TextChanged += new System.EventHandler(this.txtParCode_TextChanged);
+            this.txtBarCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBarCode_KeyPress);
             // 
             // label1
             // 
@@ -147,9 +148,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnItemDown.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnItemDown.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnItemDown.ImageOptions.SvgImage")));
-            this.btnItemDown.Location = new System.Drawing.Point(261, 67);
+            this.btnItemDown.Location = new System.Drawing.Point(261, 61);
             this.btnItemDown.Name = "btnItemDown";
-            this.btnItemDown.Size = new System.Drawing.Size(28, 28);
+            this.btnItemDown.Size = new System.Drawing.Size(30, 27);
             this.btnItemDown.TabIndex = 13;
             this.btnItemDown.Click += new System.EventHandler(this.btnItemDown_Click);
             // 
@@ -160,7 +161,7 @@
             this.F2.Appearance.Options.UseFont = true;
             this.F2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.F2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.F2.Location = new System.Drawing.Point(231, 73);
+            this.F2.Location = new System.Drawing.Point(235, 67);
             this.F2.Name = "F2";
             this.F2.Size = new System.Drawing.Size(24, 22);
             this.F2.TabIndex = 14;
@@ -173,9 +174,9 @@
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl2.Location = new System.Drawing.Point(147, 73);
+            this.labelControl2.Location = new System.Drawing.Point(148, 67);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(44, 22);
+            this.labelControl2.Size = new System.Drawing.Size(44, 21);
             this.labelControl2.TabIndex = 18;
             this.labelControl2.Text = "Delete";
             this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
@@ -188,9 +189,9 @@
             this.btnSupplerProwser.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.btnSupplerProwser.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnSupplerProwser.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnSupplerProwser.Location = new System.Drawing.Point(261, 5);
+            this.btnSupplerProwser.Location = new System.Drawing.Point(262, 5);
             this.btnSupplerProwser.Name = "btnSupplerProwser";
-            this.btnSupplerProwser.Size = new System.Drawing.Size(28, 20);
+            this.btnSupplerProwser.Size = new System.Drawing.Size(28, 13);
             this.btnSupplerProwser.TabIndex = 19;
             this.btnSupplerProwser.Text = "...";
             this.btnSupplerProwser.Click += new System.EventHandler(this.labelControl1_Click);
@@ -217,10 +218,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnItemDelete.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnItemDelete.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnItemDelete.ImageOptions.SvgImage")));
-            this.btnItemDelete.Location = new System.Drawing.Point(194, 67);
+            this.btnItemDelete.Location = new System.Drawing.Point(194, 61);
             this.btnItemDelete.Name = "btnItemDelete";
-            this.btnItemDelete.Size = new System.Drawing.Size(33, 29);
+            this.btnItemDelete.Size = new System.Drawing.Size(35, 28);
             this.btnItemDelete.TabIndex = 17;
+            this.btnItemDelete.Click += new System.EventHandler(this.btnItemDelete_Click);
             // 
             // labelControl3
             // 
@@ -229,9 +231,9 @@
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl3.Location = new System.Drawing.Point(545, 69);
+            this.labelControl3.Location = new System.Drawing.Point(546, 69);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(21, 13);
+            this.labelControl3.Size = new System.Drawing.Size(21, 20);
             this.labelControl3.TabIndex = 23;
             this.labelControl3.Text = "F3";
             // 
@@ -245,6 +247,7 @@
             this.labelControl4.Size = new System.Drawing.Size(243, 20);
             this.labelControl4.TabIndex = 26;
             this.labelControl4.Text = "لدفع و حفظ و طباعة الفاتوره اضغط F12";
+            this.labelControl4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.labelControl4_KeyDown);
             // 
             // dgvBuy
             // 
@@ -258,19 +261,46 @@
             this.Column4,
             this.Column5,
             this.Column6});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBuy.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvBuy.Location = new System.Drawing.Point(3, 108);
             this.dgvBuy.Name = "dgvBuy";
             this.dgvBuy.Size = new System.Drawing.Size(851, 305);
             this.dgvBuy.TabIndex = 27;
             this.dgvBuy.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "رقم المنتج";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "اسم المنتج";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 150;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "الكميه";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 150;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "السعر";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 150;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "الخصم";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 110;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "الاجمالي";
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 150;
             // 
             // labelControl5
             // 
@@ -309,25 +339,25 @@
             this.lblUserName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblUserName.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.lblUserName.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.lblUserName.Location = new System.Drawing.Point(735, 433);
+            this.lblUserName.Location = new System.Drawing.Point(736, 433);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(28, 17);
+            this.lblUserName.Size = new System.Drawing.Size(28, 21);
             this.lblUserName.TabIndex = 31;
             this.lblUserName.Text = "...";
             // 
-            // labelControl7
+            // lblProductCount
             // 
-            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl7.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl7.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.labelControl7.Location = new System.Drawing.Point(735, 469);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(28, 17);
-            this.labelControl7.TabIndex = 33;
-            this.labelControl7.Text = "...";
+            this.lblProductCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lblProductCount.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductCount.Appearance.Options.UseFont = true;
+            this.lblProductCount.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblProductCount.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.lblProductCount.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.lblProductCount.Location = new System.Drawing.Point(736, 469);
+            this.lblProductCount.Name = "lblProductCount";
+            this.lblProductCount.Size = new System.Drawing.Size(28, 22);
+            this.lblProductCount.TabIndex = 33;
+            this.lblProductCount.Text = "...";
             // 
             // textBox2
             // 
@@ -398,6 +428,7 @@
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(191, 86);
             this.txtTotal.TabIndex = 38;
+            this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
             // 
             // label5
             // 
@@ -410,53 +441,18 @@
             this.label5.TabIndex = 39;
             this.label5.Text = " اجمالي المطلوب:";
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "رقم المنتج";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "اسم المنتج";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "الكميه";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 150;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "السعر";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 150;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "الخصم";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 110;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "الاجمالي";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 150;
-            // 
             // frm_Buy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 534);
+            this.ClientSize = new System.Drawing.Size(864, 527);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dtpAagel);
             this.Controls.Add(this.rbtnAagel);
             this.Controls.Add(this.rbtnCash);
-            this.Controls.Add(this.labelControl7);
+            this.Controls.Add(this.lblProductCount);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.textBox1);
@@ -475,14 +471,17 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbxSuppliers);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtParCode);
+            this.Controls.Add(this.txtBarCode);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lable1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.KeyPreview = true;
             this.Name = "frm_Buy";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.frm_Buy_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.labelControl4_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dtpDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuy)).EndInit();
@@ -495,7 +494,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtParCode;
+        private System.Windows.Forms.TextBox txtBarCode;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lable1;
         private System.Windows.Forms.Label label2;
@@ -514,7 +513,7 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox textBox1;
         private DevExpress.XtraEditors.LabelControl lblUserName;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl lblProductCount;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.RadioButton rbtnCash;
         private System.Windows.Forms.RadioButton rbtnAagel;

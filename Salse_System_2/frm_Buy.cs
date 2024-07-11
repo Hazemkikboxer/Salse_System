@@ -31,7 +31,7 @@ namespace Salse_System_2
                     frm.FormClosed += new FormClosedEventHandler(frm_formClosed);
                 }
                 return frm;
-             }
+            }
         }
       
         public frm_Buy()
@@ -48,7 +48,7 @@ namespace Salse_System_2
         private void AutoNumper()
         {
             tbl.Clear();
-            tbl = db.ReedData("select max (Order_ID) from Buys_Table","");
+            tbl = db.ReedData("select Max (Order_ID) from Buy_Table ","");
 
             if (string.IsNullOrEmpty(tbl.Rows[0][0].ToString()))
             {
@@ -60,13 +60,15 @@ namespace Salse_System_2
             }
             dtpDate.Text = DateTime.Now.ToShortDateString();
             dtpAagel.Text = DateTime.Now.ToShortDateString();
-            cbxProduct.SelectedIndex = -0;
+            cbxProduct.SelectedIndex = 0;
             cbxSuppliers.SelectedIndex = 0;
             cbxProduct.Text = "اختر منتج";
             rbtnCash.Checked = true;
+            dgvBuy.Rows.Clear();
+            lblProductCount.Text = "0";
             txtTotal.Clear();
-            txtParCode.Clear();
-            txtParCode.Focus();
+            txtBarCode.Clear();
+            txtBarCode.Focus();
 
         }
 
@@ -115,7 +117,23 @@ namespace Salse_System_2
         {
 
         }
+        private void TotalCounter()
+        {
+            try
+            {
+                decimal TotalOrder = 0;
+                for (int i = 0; i <= dgvBuy.Rows.Count - 1; i++)
+                {
+                    TotalOrder += Convert.ToDecimal(dgvBuy.Rows[i].Cells[5].Value);
+                }
+                txtTotal.Text = Math.Round(TotalOrder).ToString();
+                lblProductCount.Text = dgvBuy.Rows.Count.ToString();
+            }
+            catch (Exception ex)
+            {
 
+            }
+        }
         private void btnItemDown_Click(object sender, EventArgs e)
         {
             if (cbxProduct.Text == "اختر منتج")
@@ -158,20 +176,8 @@ namespace Salse_System_2
                 {
 
                 }
-                try
-                {
-                    decimal TotalOrder = 0;
-                    for (int i = 0;i <= dgvBuy.Rows.Count -1; i++)
-                    {
-                        TotalOrder +=Convert.ToDecimal(dgvBuy.Rows[i].Cells[5].Value);
-                    }
-                    txtTotal.Text =Math.Round( TotalOrder ).ToString();
-                }
-                catch(Exception ex)
-                {
 
-                }
-                
+                TotalCounter();              
             }
 
 
@@ -180,6 +186,134 @@ namespace Salse_System_2
         private void cbxProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnItemDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvBuy.Rows.Count >= 1)
+            {           
+                if (MessageBox.Show(" هل بالفعل تريد مسح البيانات المحدده", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    int index = dgvBuy.SelectedRows[0].Index;
+                    dgvBuy.Rows.RemoveAt(index);
+                    TotalCounter();
+
+                    if (dgvBuy.Rows.Count <= 0)
+                    {
+                        txtTotal.Text = "0";
+                    }
+
+                }
+                else
+                {
+                    return;
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("قم بأضافة منتجات اولا ","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return;
+            }
+        }
+
+        private void txtParCode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBarCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+               
+                DataTable TBL_Product = new DataTable();
+                TBL_Product = db.ReedData($"SELECT * FROM Products_Table WHERE Barcode = N'{txtBarCode.Text}' ", "");
+
+                if (TBL_Product.Rows.Count >= 1)
+                {
+
+                    try
+                    {
+                        string Product_ID = TBL_Product.Rows[0][0].ToString();
+                        string Product_Name = TBL_Product.Rows[0][1].ToString();
+                        string Product_Qty = TBL_Product.Rows[0][2].ToString();
+                        string Product_Buy_Price = TBL_Product.Rows[0][3].ToString();
+                        decimal Discount = 0;
+                        decimal Total = 1 * Convert.ToDecimal(TBL_Product.Rows[0][3]);
+
+                        dgvBuy.Rows.Add(1);
+                        int RowIndex = dgvBuy.Rows.Count - 1;
+                        dgvBuy.Rows[RowIndex].Cells[0].Value = Product_ID;
+                        dgvBuy.Rows[RowIndex].Cells[1].Value = Product_Name;
+                        dgvBuy.Rows[RowIndex].Cells[2].Value = Product_Qty;
+                        dgvBuy.Rows[RowIndex].Cells[3].Value = Product_Buy_Price;
+                        dgvBuy.Rows[RowIndex].Cells[4].Value = Discount;
+                        dgvBuy.Rows[RowIndex].Cells[5].Value = Total;
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+
+                    TotalCounter();
+                }
+
+            }
+        }
+        private void Pay_Order()
+        {
+            if (dgvBuy.Rows.Count >= 1)
+            {
+                if (cbxSuppliers.Items.Count <= 0)
+                {
+                    MessageBox.Show("يجب ادخال اسم المورد اولا ", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                try
+                {
+                    string Date = dtpDate.EditValue.ToString();
+                    db.ExecuteData($"insert into Buy_Table values({txtID.Text} ,{cbxSuppliers.SelectedValue} , N'{Date}' )", "");
+                    for (int i = 0; i <= dgvBuy.Rows.Count - 1; i++)
+                    {
+                        db.ExecuteData($"INSERT INTO Buy_Detalis_Table VALUES ({txtID.Text},{dgvBuy.Rows[i].Cells[0].Value},{cbxSuppliers.SelectedValue},{dgvBuy.Rows[i].Cells[2].Value},{dgvBuy.Rows[i].Cells[3].Value},{dgvBuy.Rows[i].Cells[4].Value},{dgvBuy.Rows[i].Cells[5].Value},'{Date}','123','')", "");
+
+                    }
+                    AutoNumper();
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+        }
+        private void Update_Qty()
+        {
+            if (dgvBuy.Rows.Count >= 1)
+            {
+                try
+                {
+                    frm_Update_Qty frm = new frm_Update_Qty();
+                    frm.ShowDialog();
+                }
+                catch (Exception ex) { }
+
+            }
+        }
+        private void labelControl4_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F12)
+            {
+                Pay_Order();
+            }else if (e.KeyCode == Keys.F11)
+            {
+                Update_Qty();
+            } 
         }
     }
 }
