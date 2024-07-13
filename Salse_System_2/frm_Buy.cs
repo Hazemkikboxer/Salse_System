@@ -157,10 +157,10 @@ namespace Salse_System_2
                 {
                     string  Product_ID = TBL_Product.Rows[0][0].ToString();
                     string  Product_Name = TBL_Product.Rows[0][1].ToString();
-                    string  Product_Qty = TBL_Product.Rows[0][2].ToString();
+                    string  Product_Qty = "1";
                     string  Product_Buy_Price = TBL_Product.Rows[0][3].ToString();
                     decimal Discount = 0;
-                    decimal Total = 1 * Convert.ToDecimal(TBL_Product.Rows[0][3]);
+                    decimal Total = Convert.ToDecimal(Product_Qty) * Convert.ToDecimal(TBL_Product.Rows[0][3]);
 
                     dgvBuy.Rows.Add(1);
                     int RowIndex = dgvBuy.Rows.Count - 1;
@@ -296,12 +296,13 @@ namespace Salse_System_2
         {
             if (dgvBuy.Rows.Count >= 1)
             {
-                try
-                {
-                    frm_Update_Qty frm = new frm_Update_Qty();
-                    frm.ShowDialog();
-                }
-                catch (Exception ex) { }
+                Properties.Settings.Default.Item_Qty = Convert.ToDecimal(dgvBuy.CurrentRow.Cells[2].Value);
+                Properties.Settings.Default.Item_BuyPrice = Convert.ToDecimal(dgvBuy.CurrentRow.Cells[3].Value);
+                Properties.Settings.Default.Discount = Convert.ToDecimal(dgvBuy.CurrentRow.Cells[4].Value);
+                Properties.Settings.Default.Save();
+                  
+                 frm_Update_Qty frm = new frm_Update_Qty(this);
+                 frm.ShowDialog();
 
             }
         }
@@ -314,6 +315,39 @@ namespace Salse_System_2
             {
                 Update_Qty();
             } 
+        }
+
+        private void dgvBuy_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            decimal Item_Qty; decimal Item_BuyPrice; decimal Item_Discount;
+            try
+            {
+                //int index = dgvBuy.CurrentRow.Cells[0].Index;
+                if (dgvBuy.CurrentRow != null)
+                {
+
+                 Item_Qty = Convert.ToDecimal(dgvBuy.CurrentRow.Cells[2].Value);
+                 Item_BuyPrice = Convert.ToDecimal(dgvBuy.CurrentRow.Cells[3].Value);
+                 Item_Discount = Convert.ToDecimal(dgvBuy.CurrentRow.Cells[4].Value);
+                 decimal Total = 0;
+                 Total = (Item_Qty * Item_BuyPrice) - Item_Discount;
+                
+                 dgvBuy.CurrentRow.Cells[5].Value = Total;
+                
+                 decimal TotalOrder = 0;
+                 for (int i = 0; i < dgvBuy.Rows.Count; i++)
+                 {
+                     TotalOrder += Convert.ToDecimal(dgvBuy.Rows[i].Cells[5].Value);
+                 }
+                 txtTotal.Text = Math.Round(TotalOrder, 2).ToString();
+                }  
+
+            }
+            catch (Exception ex) { 
+            }
+             
+            
+            
         }
     }
 }

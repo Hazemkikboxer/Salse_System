@@ -266,6 +266,7 @@
             this.dgvBuy.Size = new System.Drawing.Size(851, 305);
             this.dgvBuy.TabIndex = 27;
             this.dgvBuy.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvBuy.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuy_CellValueChanged);
             // 
             // Column1
             // 
@@ -508,7 +509,6 @@
         private DevExpress.XtraEditors.SimpleButton btnItemDelete;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private System.Windows.Forms.DataGridView dgvBuy;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox textBox1;
@@ -528,5 +528,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        public System.Windows.Forms.DataGridView dgvBuy;
     }
 }

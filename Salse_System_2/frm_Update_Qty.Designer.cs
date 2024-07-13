@@ -43,7 +43,6 @@
             this.txt_Qty.Location = new System.Drawing.Point(45, 215);
             this.txt_Qty.Multiline = true;
             this.txt_Qty.Name = "txt_Qty";
-            this.txt_Qty.ReadOnly = true;
             this.txt_Qty.Size = new System.Drawing.Size(258, 50);
             this.txt_Qty.TabIndex = 31;
             // 
@@ -63,7 +62,6 @@
             this.txt_Buy_Price.Location = new System.Drawing.Point(45, 133);
             this.txt_Buy_Price.Multiline = true;
             this.txt_Buy_Price.Name = "txt_Buy_Price";
-            this.txt_Buy_Price.ReadOnly = true;
             this.txt_Buy_Price.Size = new System.Drawing.Size(258, 50);
             this.txt_Buy_Price.TabIndex = 33;
             // 
@@ -83,7 +81,6 @@
             this.txt_Discount.Location = new System.Drawing.Point(45, 45);
             this.txt_Discount.Multiline = true;
             this.txt_Discount.Name = "txt_Discount";
-            this.txt_Discount.ReadOnly = true;
             this.txt_Discount.Size = new System.Drawing.Size(258, 50);
             this.txt_Discount.TabIndex = 35;
             // 
@@ -103,18 +100,19 @@
             this.btn_Enter.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Enter.Appearance.Options.UseFont = true;
             this.btn_Enter.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btn_Enter.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
+            this.btn_Enter.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Enter.ImageOptions.SvgImage")));
             this.btn_Enter.Location = new System.Drawing.Point(45, 295);
             this.btn_Enter.Name = "btn_Enter";
             this.btn_Enter.Size = new System.Drawing.Size(258, 45);
             this.btn_Enter.TabIndex = 36;
             this.btn_Enter.Text = "حفظ";
+            this.btn_Enter.Click += new System.EventHandler(this.btn_Enter_Click);
             // 
             // frm_Update_Qty
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(410, 392);
+            this.ClientSize = new System.Drawing.Size(382, 378);
             this.Controls.Add(this.btn_Enter);
             this.Controls.Add(this.txt_Discount);
             this.Controls.Add(this.label2);
@@ -128,6 +126,8 @@
             this.Name = "frm_Update_Qty";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frm_Update_Qty_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_Update_Qty_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
