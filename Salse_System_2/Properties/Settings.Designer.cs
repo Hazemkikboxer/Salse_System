@@ -58,5 +58,41 @@ namespace Salse_System_2.Properties {
                 this["Discount"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public decimal Item_Required {
+            get {
+                return ((decimal)(this["Item_Required"]));
+            }
+            set {
+                this["Item_Required"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal Item_Payed {
+            get {
+                return ((decimal)(this["Item_Payed"]));
+            }
+            set {
+                this["Item_Payed"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal Item_Baky {
+            get {
+                return ((decimal)(this["Item_Baky"]));
+            }
+            set {
+                this["Item_Baky"] = value;
+            }
+        }
     }
 }

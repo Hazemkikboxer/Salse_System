@@ -85,6 +85,12 @@
     <Compile Include="frm_Buy.Designer.cs">
       <DependentUpon>frm_Buy.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_BuyPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_BuyPay.Designer.cs">
+      <DependentUpon>frm_BuyPay.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Suppliers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Buy.resx">
       <DependentUpon>frm_Buy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_BuyPay.resx">
+      <DependentUpon>frm_BuyPay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Suppliers.resx">
       <DependentUpon>frm_Suppliers.cs</DependentUpon>

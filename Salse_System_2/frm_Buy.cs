@@ -271,25 +271,31 @@ namespace Salse_System_2
         {
             if (dgvBuy.Rows.Count >= 1)
             {
-                if (cbxSuppliers.Items.Count <= 0)
-                {
-                    MessageBox.Show("يجب ادخال اسم المورد اولا ", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                try
-                {
-                    string Date = dtpDate.EditValue.ToString();
-                    db.ExecuteData($"insert into Buy_Table values({txtID.Text} ,{cbxSuppliers.SelectedValue} , N'{Date}' )", "");
-                    for (int i = 0; i <= dgvBuy.Rows.Count - 1; i++)
-                    {
-                        db.ExecuteData($"INSERT INTO Buy_Detalis_Table VALUES ({txtID.Text},{dgvBuy.Rows[i].Cells[0].Value},{cbxSuppliers.SelectedValue},{dgvBuy.Rows[i].Cells[2].Value},{dgvBuy.Rows[i].Cells[3].Value},{dgvBuy.Rows[i].Cells[4].Value},{dgvBuy.Rows[i].Cells[5].Value},'{Date}','123','')", "");
+                Properties.Settings.Default.Item_Required = Convert.ToDecimal(txtTotal.Text);
+                Properties.Settings.Default.Item_Payed = 0;
+                Properties.Settings.Default.Item_Baky = 0;
+                Properties.Settings.Default.Save();
 
-                    }
-                    AutoNumper();
-                }
-                catch (Exception ex)
-                {
-
-                }
+                frm_BuyPay frm = new frm_BuyPay();
+                frm.ShowDialog();
+                
+              //  if (cbxSuppliers.Items.Count <= 0) { MessageBox.Show("يجب ادخال اسم المورد اولا ", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+              //  
+              //  try
+              //  {
+              //      string Date = dtpDate.EditValue.ToString();
+              //      db.ExecuteData($"insert into Buy_Table values({txtID.Text} ,{cbxSuppliers.SelectedValue} , N'{Date}' )", "");
+              //      for (int i = 0; i <= dgvBuy.Rows.Count - 1; i++)
+              //      {
+              //          db.ExecuteData($"INSERT INTO Buy_Detalis_Table VALUES ({txtID.Text},{dgvBuy.Rows[i].Cells[0].Value},{cbxSuppliers.SelectedValue},{dgvBuy.Rows[i].Cells[2].Value},{dgvBuy.Rows[i].Cells[3].Value},{dgvBuy.Rows[i].Cells[4].Value},{dgvBuy.Rows[i].Cells[5].Value},'{Date}','123','')", "");
+              //
+              //      }
+              //      AutoNumper();
+              //  }
+              //  catch (Exception ex)
+              //  {
+              //
+              //  }
             }
         }
         private void Update_Qty()

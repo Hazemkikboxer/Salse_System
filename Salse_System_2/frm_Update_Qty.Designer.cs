@@ -112,7 +112,7 @@
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(382, 378);
+            this.ClientSize = new System.Drawing.Size(368, 371);
             this.Controls.Add(this.btn_Enter);
             this.Controls.Add(this.txt_Discount);
             this.Controls.Add(this.label2);

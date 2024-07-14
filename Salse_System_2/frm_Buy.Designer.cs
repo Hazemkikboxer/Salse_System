@@ -150,7 +150,7 @@
             this.btnItemDown.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnItemDown.ImageOptions.SvgImage")));
             this.btnItemDown.Location = new System.Drawing.Point(261, 61);
             this.btnItemDown.Name = "btnItemDown";
-            this.btnItemDown.Size = new System.Drawing.Size(30, 27);
+            this.btnItemDown.Size = new System.Drawing.Size(16, 20);
             this.btnItemDown.TabIndex = 13;
             this.btnItemDown.Click += new System.EventHandler(this.btnItemDown_Click);
             // 
@@ -161,9 +161,9 @@
             this.F2.Appearance.Options.UseFont = true;
             this.F2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.F2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.F2.Location = new System.Drawing.Point(235, 67);
+            this.F2.Location = new System.Drawing.Point(228, 67);
             this.F2.Name = "F2";
-            this.F2.Size = new System.Drawing.Size(24, 22);
+            this.F2.Size = new System.Drawing.Size(24, 15);
             this.F2.TabIndex = 14;
             this.F2.Text = "F2";
             // 
@@ -174,9 +174,9 @@
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl2.Location = new System.Drawing.Point(148, 67);
+            this.labelControl2.Location = new System.Drawing.Point(141, 67);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(44, 21);
+            this.labelControl2.Size = new System.Drawing.Size(44, 14);
             this.labelControl2.TabIndex = 18;
             this.labelControl2.Text = "Delete";
             this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
@@ -189,9 +189,9 @@
             this.btnSupplerProwser.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.btnSupplerProwser.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnSupplerProwser.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnSupplerProwser.Location = new System.Drawing.Point(262, 5);
+            this.btnSupplerProwser.Location = new System.Drawing.Point(255, 5);
             this.btnSupplerProwser.Name = "btnSupplerProwser";
-            this.btnSupplerProwser.Size = new System.Drawing.Size(28, 13);
+            this.btnSupplerProwser.Size = new System.Drawing.Size(28, 6);
             this.btnSupplerProwser.TabIndex = 19;
             this.btnSupplerProwser.Text = "...";
             this.btnSupplerProwser.Click += new System.EventHandler(this.labelControl1_Click);
@@ -220,7 +220,7 @@
             this.btnItemDelete.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnItemDelete.ImageOptions.SvgImage")));
             this.btnItemDelete.Location = new System.Drawing.Point(194, 61);
             this.btnItemDelete.Name = "btnItemDelete";
-            this.btnItemDelete.Size = new System.Drawing.Size(35, 28);
+            this.btnItemDelete.Size = new System.Drawing.Size(21, 21);
             this.btnItemDelete.TabIndex = 17;
             this.btnItemDelete.Click += new System.EventHandler(this.btnItemDelete_Click);
             // 
@@ -231,9 +231,9 @@
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl3.Location = new System.Drawing.Point(546, 69);
+            this.labelControl3.Location = new System.Drawing.Point(539, 69);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(21, 20);
+            this.labelControl3.Size = new System.Drawing.Size(21, 13);
             this.labelControl3.TabIndex = 23;
             this.labelControl3.Text = "F3";
             // 
@@ -340,9 +340,9 @@
             this.lblUserName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblUserName.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.lblUserName.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.lblUserName.Location = new System.Drawing.Point(736, 433);
+            this.lblUserName.Location = new System.Drawing.Point(729, 433);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(28, 21);
+            this.lblUserName.Size = new System.Drawing.Size(28, 14);
             this.lblUserName.TabIndex = 31;
             this.lblUserName.Text = "...";
             // 
@@ -354,9 +354,9 @@
             this.lblProductCount.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblProductCount.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.lblProductCount.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.lblProductCount.Location = new System.Drawing.Point(736, 469);
+            this.lblProductCount.Location = new System.Drawing.Point(729, 469);
             this.lblProductCount.Name = "lblProductCount";
-            this.lblProductCount.Size = new System.Drawing.Size(28, 22);
+            this.lblProductCount.Size = new System.Drawing.Size(28, 15);
             this.lblProductCount.TabIndex = 33;
             this.lblProductCount.Text = "...";
             // 
@@ -446,7 +446,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 527);
+            this.ClientSize = new System.Drawing.Size(850, 520);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label4);
