@@ -39,6 +39,10 @@ namespace Salse_System_2
                 MessageBox.Show(ex.Message);
 
             }
+            finally
+            {
+                conn.Close();
+            }
             return TBL;
         }
 
@@ -57,12 +61,15 @@ namespace Salse_System_2
                     MessageBox.Show(Message, "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
-
                 return true;
             }
             catch (Exception ex) 
             {
                 return false;
+            }
+            finally
+            {
+                conn.Close();
             }
             
 

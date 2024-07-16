@@ -11,14 +11,17 @@
     <Setting Name="Discount" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="Item_Required" Type="System.Decimal" Scope="User">
+    <Setting Name="Item_Matlob" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
-    <Setting Name="Item_Payed" Type="System.Decimal" Scope="User">
+    <Setting Name="Item_Madfo3" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="Item_Baky" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Is_Eenter" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

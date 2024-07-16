@@ -62,24 +62,24 @@ namespace Salse_System_2.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1")]
-        public decimal Item_Required {
+        public decimal Item_Matlob {
             get {
-                return ((decimal)(this["Item_Required"]));
+                return ((decimal)(this["Item_Matlob"]));
             }
             set {
-                this["Item_Required"] = value;
+                this["Item_Matlob"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public decimal Item_Payed {
+        public decimal Item_Madfo3 {
             get {
-                return ((decimal)(this["Item_Payed"]));
+                return ((decimal)(this["Item_Madfo3"]));
             }
             set {
-                this["Item_Payed"] = value;
+                this["Item_Madfo3"] = value;
             }
         }
         
@@ -92,6 +92,18 @@ namespace Salse_System_2.Properties {
             }
             set {
                 this["Item_Baky"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Is_Eenter {
+            get {
+                return ((bool)(this["Is_Eenter"]));
+            }
+            set {
+                this["Is_Eenter"] = value;
             }
         }
     }

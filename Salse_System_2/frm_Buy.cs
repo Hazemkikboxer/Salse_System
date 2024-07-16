@@ -125,6 +125,9 @@ namespace Salse_System_2
                 for (int i = 0; i <= dgvBuy.Rows.Count - 1; i++)
                 {
                     TotalOrder += Convert.ToDecimal(dgvBuy.Rows[i].Cells[5].Value);
+                    dgvBuy.ClearSelection();
+                    dgvBuy.FirstDisplayedScrollingRowIndex = dgvBuy.Rows.Count - 1;
+                    dgvBuy.Rows[dgvBuy.Rows.Count - 1].Selected = true;
                 }
                 txtTotal.Text = Math.Round(TotalOrder).ToString();
                 lblProductCount.Text = dgvBuy.Rows.Count.ToString();
@@ -271,31 +274,58 @@ namespace Salse_System_2
         {
             if (dgvBuy.Rows.Count >= 1)
             {
-                Properties.Settings.Default.Item_Required = Convert.ToDecimal(txtTotal.Text);
-                Properties.Settings.Default.Item_Payed = 0;
+                Properties.Settings.Default.Item_Matlob = Convert.ToDecimal(txtTotal.Text);
+                Properties.Settings.Default.Item_Madfo3 = 0;
                 Properties.Settings.Default.Item_Baky = 0;
                 Properties.Settings.Default.Save();
 
                 frm_BuyPay frm = new frm_BuyPay();
                 frm.ShowDialog();
-                
-              //  if (cbxSuppliers.Items.Count <= 0) { MessageBox.Show("يجب ادخال اسم المورد اولا ", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-              //  
-              //  try
-              //  {
-              //      string Date = dtpDate.EditValue.ToString();
-              //      db.ExecuteData($"insert into Buy_Table values({txtID.Text} ,{cbxSuppliers.SelectedValue} , N'{Date}' )", "");
-              //      for (int i = 0; i <= dgvBuy.Rows.Count - 1; i++)
-              //      {
-              //          db.ExecuteData($"INSERT INTO Buy_Detalis_Table VALUES ({txtID.Text},{dgvBuy.Rows[i].Cells[0].Value},{cbxSuppliers.SelectedValue},{dgvBuy.Rows[i].Cells[2].Value},{dgvBuy.Rows[i].Cells[3].Value},{dgvBuy.Rows[i].Cells[4].Value},{dgvBuy.Rows[i].Cells[5].Value},'{Date}','123','')", "");
-              //
-              //      }
-              //      AutoNumper();
-              //  }
-              //  catch (Exception ex)
-              //  {
-              //
-              //  }
+
+                if (Properties.Settings.Default.Is_Eenter == true)
+                {
+                    if (cbxSuppliers.Items.Count <= 0) { MessageBox.Show("يجب ادخال اسم المورد اولا ", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+
+                    try
+                    {
+                        string Date = dtpDate.EditValue.ToString();
+                        string Reminder_Date = dtpAagel.EditValue.ToString();
+                        db.ExecuteData($"insert into Buy_Table values({txtID.Text} ,{cbxSuppliers.SelectedValue} , N'{Date}' )", "");
+                        for (int i = 0; i <= dgvBuy.Rows.Count - 1; i++)
+                        {
+                            db.ExecuteData($"INSERT INTO Buy_Detalis_Table VALUES ({txtID.Text},{dgvBuy.Rows[i].Cells[0].Value},{cbxSuppliers.SelectedValue},{dgvBuy.Rows[i].Cells[2].Value},{dgvBuy.Rows[i].Cells[3].Value},{dgvBuy.Rows[i].Cells[4].Value},{dgvBuy.Rows[i].Cells[5].Value},'{Date}','123',{txtTotal.Text},{Properties.Settings.Default.Item_Madfo3},{Properties.Settings.Default.Item_Baky},'')", "");
+                        }
+
+                        if (rbtnCash.Checked == true)
+                        {
+
+                            while (Properties.Settings.Default.Item_Madfo3 != Properties.Settings.Default.Item_Matlob)
+                            {
+                                    MessageBox.Show("في الدفع الكاش يجب دفع المبلغ المطلوب كله او قم بالدفع الاجل", "انتبه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    frm_BuyPay _frm = new frm_BuyPay();
+                                    frm.ShowDialog();            
+                            }
+
+                            db.ExecuteData($"insert into SuppliersMoney_Madfo3 values ( {txtID.Text},{cbxSuppliers.SelectedValue} ,{Properties.Settings.Default.Item_Madfo3} , '{Date}')", "");
+                        }
+
+                        else if (rbtnAagel.Checked == true)
+                        {
+                            db.ExecuteData($"insert into SuppliersMoney_Baky values ({txtID.Text} ,{cbxSuppliers.SelectedValue} ,{Properties.Settings.Default.Item_Baky} , '{Date}','{Reminder_Date}')", "");
+                            if (Properties.Settings.Default.Item_Madfo3 > 0)
+                            {
+                                db.ExecuteData($"insert into SuppliersMoney_Madfo3 values ( {txtID.Text},{cbxSuppliers.SelectedValue} ,{Properties.Settings.Default.Item_Madfo3} , '{Date}')", "");
+                            }
+                        }
+
+                        AutoNumper();
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+                           
             }
         }
         private void Update_Qty()
@@ -354,6 +384,11 @@ namespace Salse_System_2
              
             
             
+        }
+
+        private void F2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

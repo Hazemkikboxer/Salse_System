@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Buy));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtBarCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lable1 = new System.Windows.Forms.Label();
@@ -148,9 +149,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnItemDown.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnItemDown.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnItemDown.ImageOptions.SvgImage")));
-            this.btnItemDown.Location = new System.Drawing.Point(261, 61);
+            this.btnItemDown.Location = new System.Drawing.Point(266, 60);
             this.btnItemDown.Name = "btnItemDown";
-            this.btnItemDown.Size = new System.Drawing.Size(16, 20);
+            this.btnItemDown.Size = new System.Drawing.Size(28, 30);
             this.btnItemDown.TabIndex = 13;
             this.btnItemDown.Click += new System.EventHandler(this.btnItemDown_Click);
             // 
@@ -161,11 +162,12 @@
             this.F2.Appearance.Options.UseFont = true;
             this.F2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.F2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.F2.Location = new System.Drawing.Point(228, 67);
+            this.F2.Location = new System.Drawing.Point(238, 66);
             this.F2.Name = "F2";
-            this.F2.Size = new System.Drawing.Size(24, 15);
+            this.F2.Size = new System.Drawing.Size(24, 24);
             this.F2.TabIndex = 14;
             this.F2.Text = "F2";
+            this.F2.Click += new System.EventHandler(this.F2_Click);
             // 
             // labelControl2
             // 
@@ -174,9 +176,9 @@
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl2.Location = new System.Drawing.Point(141, 67);
+            this.labelControl2.Location = new System.Drawing.Point(150, 65);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(44, 14);
+            this.labelControl2.Size = new System.Drawing.Size(44, 24);
             this.labelControl2.TabIndex = 18;
             this.labelControl2.Text = "Delete";
             this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
@@ -189,9 +191,9 @@
             this.btnSupplerProwser.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.btnSupplerProwser.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnSupplerProwser.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnSupplerProwser.Location = new System.Drawing.Point(255, 5);
+            this.btnSupplerProwser.Location = new System.Drawing.Point(266, 5);
             this.btnSupplerProwser.Name = "btnSupplerProwser";
-            this.btnSupplerProwser.Size = new System.Drawing.Size(28, 6);
+            this.btnSupplerProwser.Size = new System.Drawing.Size(28, 19);
             this.btnSupplerProwser.TabIndex = 19;
             this.btnSupplerProwser.Text = "...";
             this.btnSupplerProwser.Click += new System.EventHandler(this.labelControl1_Click);
@@ -199,7 +201,7 @@
             // dtpDate
             // 
             this.dtpDate.EditValue = null;
-            this.dtpDate.Location = new System.Drawing.Point(26, 69);
+            this.dtpDate.Location = new System.Drawing.Point(23, 71);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -218,9 +220,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnItemDelete.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnItemDelete.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnItemDelete.ImageOptions.SvgImage")));
-            this.btnItemDelete.Location = new System.Drawing.Point(194, 61);
+            this.btnItemDelete.Location = new System.Drawing.Point(200, 60);
             this.btnItemDelete.Name = "btnItemDelete";
-            this.btnItemDelete.Size = new System.Drawing.Size(21, 21);
+            this.btnItemDelete.Size = new System.Drawing.Size(32, 30);
             this.btnItemDelete.TabIndex = 17;
             this.btnItemDelete.Click += new System.EventHandler(this.btnItemDelete_Click);
             // 
@@ -231,9 +233,9 @@
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl3.Location = new System.Drawing.Point(539, 69);
+            this.labelControl3.Location = new System.Drawing.Point(544, 69);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(21, 13);
+            this.labelControl3.Size = new System.Drawing.Size(21, 19);
             this.labelControl3.TabIndex = 23;
             this.labelControl3.Text = "F3";
             // 
@@ -261,6 +263,14 @@
             this.Column4,
             this.Column5,
             this.Column6});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBuy.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBuy.Location = new System.Drawing.Point(3, 108);
             this.dgvBuy.Name = "dgvBuy";
             this.dgvBuy.Size = new System.Drawing.Size(851, 305);
@@ -340,9 +350,9 @@
             this.lblUserName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblUserName.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.lblUserName.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.lblUserName.Location = new System.Drawing.Point(729, 433);
+            this.lblUserName.Location = new System.Drawing.Point(734, 433);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(28, 14);
+            this.lblUserName.Size = new System.Drawing.Size(28, 21);
             this.lblUserName.TabIndex = 31;
             this.lblUserName.Text = "...";
             // 
@@ -354,9 +364,9 @@
             this.lblProductCount.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblProductCount.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.lblProductCount.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.lblProductCount.Location = new System.Drawing.Point(729, 469);
+            this.lblProductCount.Location = new System.Drawing.Point(734, 469);
             this.lblProductCount.Name = "lblProductCount";
-            this.lblProductCount.Size = new System.Drawing.Size(28, 15);
+            this.lblProductCount.Size = new System.Drawing.Size(28, 20);
             this.lblProductCount.TabIndex = 33;
             this.lblProductCount.Text = "...";
             // 
@@ -446,7 +456,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 520);
+            this.ClientSize = new System.Drawing.Size(861, 513);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label4);

@@ -97,6 +97,12 @@
     <Compile Include="frm_Suppliers.Designer.cs">
       <DependentUpon>frm_Suppliers.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Suppliers_Money.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Suppliers_Money.Designer.cs">
+      <DependentUpon>frm_Suppliers_Money.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Update_Qty.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Suppliers.resx">
       <DependentUpon>frm_Suppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Suppliers_Money.resx">
+      <DependentUpon>frm_Suppliers_Money.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Update_Qty.resx">
       <DependentUpon>frm_Update_Qty.cs</DependentUpon>
